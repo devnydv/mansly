@@ -26,7 +26,7 @@ onMounted(() => {
         <h1 class="page-title">🔥 Latest Deals & Discounts</h1>
         <div class="deal-grid">
             <div class="deal-card" v-for="value in mdata" :key="value.id">
-                <img :src="value.thumbnail" :alt="value.name" />
+                <img :src="value.thumbnails" :alt="value.name" />
                 <div class="deal-content">
                     <h2 class="deal-title">{{ value.name }}</h2>
                     <div class="price">

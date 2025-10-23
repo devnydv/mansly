@@ -6,9 +6,9 @@
         ☰
       </div>
       <ul :class="['nav-links', { open: isOpen }]">
-        <li><a href="#">Home</a></li>
+        <li><router-link to="/">Home</router-link></li>
         <li><a href="#">Deals</a></li>
-        <li><a href="#">Categories</a></li>
+        <li><router-link to="/category">Categories</router-link></li>
         <li><a href="#">About</a></li>
       </ul>
     </div>

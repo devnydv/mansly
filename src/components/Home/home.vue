@@ -6,7 +6,7 @@ onMounted(() => {
     // Fetch deals or perform other setup tasks here
     async function getdata() {
         try {
-            const response = await fetch('https://filmyapp-e1005.firebaseio.com/news/all/data.json');
+            const response = await fetch('https://filmyapp-e1005.firebaseio.com/short/itemdata/Air%20Conditioners/items.json');
             const data = await response.json();
             mdata.value = data;
         } catch (error) {
@@ -26,12 +26,12 @@ onMounted(() => {
         <h1 class="page-title">🔥 Latest Deals & Discounts</h1>
         <div class="deal-grid">
             <div class="deal-card" v-for="value in mdata" :key="value.id">
-                <img :src="value.imageUrl" :alt="value.title" />
+                <img :src="value.thumbnail" :alt="value.name" />
                 <div class="deal-content">
-                    <h2 class="deal-title">{{ value.title }}</h2>
+                    <h2 class="deal-title">{{ value.name }}</h2>
                     <div class="price">
-                        <span class="discounted">₹999</span>
-                        <span class="original">₹1,999</span>
+                        <span class="discounted">₹{{ value.current_price }}</span>
+                        <span class="original">₹{{ value.original_price }}</span>
                     </div>
                     <div class="deal-buttons">
                         <button class="btn details">Details</button>

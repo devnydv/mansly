@@ -6,7 +6,7 @@ onMounted(() => {
     // Fetch deals or perform other setup tasks here
     async function getdata() {
         try {
-            const response = await fetch('https://jsonplaceholder.typicode.com/posts');
+            const response = await fetch('https://filmyapp-e1005.firebaseio.com/news/all/data.json');
             const data = await response.json();
             mdata.value = data;
         } catch (error) {
